@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Statistics Masterclass - Smart Study Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+
+    <!-- App Container -->
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-chart-line statistics-logo"></i>
+                <h2>Stats Academy</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="menu-item active" data-level="1">
+                        <span class="badge">L1</span>
+                        <span class="menu-text" data-en="Introduction & Data" data-mr="परिचय आणि डेटा प्रकार">Intro & Data Types</span>
+                    </li>
+                    <li class="menu-item" data-level="2">
+                        <span class="badge">L2</span>
+                        <span class="menu-text" data-en="Summary Statistics" data-mr="एकत्रित सांख्यिकी">Summary Statistics</span>
+                    </li>
+                    <li class="menu-item" data-level="3">
+                        <span class="badge">L3</span>
+                        <span class="menu-text" data-en="Probability Theory" data-mr="संभाव्यता सिद्धांत">Probability Theory</span>
+                    </li>
+                    <li class="menu-item" data-level="4">
+                        <span class="badge">L4</span>
+                        <span class="menu-text" data-en="Bayes' Theorem" data-mr="बेझचा सिद्धांत">Bayes' Theorem</span>
+                    </li>
+                    <li class="menu-item" data-level="5">
+                        <span class="badge">L5</span>
+                        <span class="menu-text" data-en="Central Limit Theorem" data-mr="मध्यवर्ती सीमा सिद्धांत">Central Limit Theorem</span>
+                    </li>
+                    <li class="menu-item" data-level="6">
+                        <span class="badge">L6</span>
+                        <span class="menu-text" data-en="Hypothesis Testing" data-mr="गृहीतक चाचणी">Hypothesis Testing</span>
+                    </li>
+                    <li class="menu-item" data-level="7">
+                        <span class="badge">L7</span>
+                        <span class="menu-text" data-en="T-Test & ANOVA" data-mr="टी-चाचणी आणि अनोव्हा">T-Test & ANOVA</span>
+                    </li>
+                    <li class="menu-item" data-level="8">
+                        <span class="badge">L8</span>
+                        <span class="menu-text" data-en="Correlation & Matrix" data-mr="सहसंबंध आणि कोव्हॅरियन्स">Correlation & Covariance</span>
+                    </li>
+                    <li class="menu-item" data-level="9">
+                        <span class="badge">L9</span>
+                        <span class="menu-text" data-en="Outliers & Cleaning" data-mr="आउटलायर्स आणि क्लिनिंग">Outliers & Cleaning</span>
+                    </li>
+                    <li class="menu-item" data-level="10">
+                        <span class="badge">L10</span>
+                        <span class="menu-text" data-en="Optimization & LP" data-mr="ऑप्टिमायझेशन आणि एलपी">Optimization & LP</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Advanced Analytics Stats</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Header Panel -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1 id="level-title">Level 01: Introduction & Data Types</h1>
+                    <p id="level-subtitle">Explore types of statistics and variable categories.</p>
+                </div>
+                <div class="header-controls">
+                    <!-- Language Cycle Button -->
+                    <button class="control-btn lang-toggle" id="lang-btn">
+                        <i class="fa-solid fa-language"></i>
+                        <span id="lang-indicator">Language: English</span>
+                    </button>
+                    <!-- Theme Toggle -->
+                    <button class="control-btn theme-toggle" id="theme-btn">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Grid Layout: Study Guide & Simulators -->
+            <div class="content-grid">
+                
+                <!-- Left Panel: Bilingual Study Guide -->
+                <section class="learn-panel card">
+                    <div class="panel-header">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> Study Notes</h3>
+                        <div class="note-tabs">
+                            <button class="tab-btn active" id="tab-study">Notes</button>
+                            <button class="tab-btn" id="tab-qa">Interview Prep</button>
+                        </div>
+                    </div>
+                    <!-- Scrollable notes container -->
+                    <div class="panel-body scrollable" id="notes-content">
+                        <!-- Dynamic study content will be injected here -->
+                    </div>
+                </section>
+
+                <!-- Right Panel: Interactive Simulators -->
+                <section class="simulator-panel">
+                    
+                    <!-- Descriptive Stats Calculator Card -->
+                    <div class="sim-card card" id="calc-card">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-calculator"></i> Statistical Calculator</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p class="sim-desc">Enter comma-separated values to compute central tendency, variance, and run a One-Sample T-Test:</p>
+                            <div class="input-group">
+                                <label for="stats-input">Data Points:</label>
+                                <input type="text" id="stats-input" value="10, 15, 12, 18, 20, 22, 22, 25, 30, 45">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="mu-input">Hypothesized Mean (μ):</label>
+                                    <input type="number" id="mu-input" value="20" style="width: 80px;">
+                                </div>
+                                <button class="action-btn calculate-btn" id="calc-btn">
+                                    Calculate & Test
+                                </button>
+                            </div>
+                            <!-- Result Outputs -->
+                            <div class="calc-results" id="calc-results-output">
+                                <div class="metric-row">
+                                    <span>Mean: <strong id="out-mean">-</strong></span>
+                                    <span>Median: <strong id="out-median">-</strong></span>
+                                    <span>Mode: <strong id="out-mode">-</strong></span>
+                                </div>
+                                <div class="metric-row">
+                                    <span>Variance ($s^2$): <strong id="out-variance">-</strong></span>
+                                    <span>Std Dev ($s$): <strong id="out-std">-</strong></span>
+                                </div>
+                                <div class="t-test-box" id="out-t-box">
+                                    <p><strong>One-Sample T-Test:</strong></p>
+                                    <p>T-Stat: <span id="out-t-stat">-</span> | P-Value: <span id="out-t-p">-</span></p>
+                                    <p id="out-t-decision" class="decision-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Central Limit Theorem Visualizer Card -->
+                    <div class="sim-card card" id="clt-card">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-chart-area"></i> CLT Distribution Visualizer</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p class="sim-desc">Simulate draws from skewed distributions. Watch the distribution of sample means form a normal curve as sample size ($N$) increases:</p>
+                            <div class="sim-controls">
+                                <div class="control-item">
+                                    <label for="clt-distribution">Parent Distribution:</label>
+                                    <select id="clt-distribution">
+                                        <option value="exponential">Exponential (Highly Skewed)</option>
+                                        <option value="uniform">Uniform (Flat)</option>
+                                        <option value="normal">Normal (Bell-shaped)</option>
+                                    </select>
+                                </div>
+                                <div class="control-item">
+                                    <label for="clt-samplesize">Sample Size (N):</label>
+                                    <input type="range" id="clt-samplesize" min="2" max="100" value="30">
+                                    <span id="samplesize-val">30</span>
+                                </div>
+                            </div>
+                            <button class="action-btn run-btn" id="clt-run-btn">
+                                <i class="fa-solid fa-play"></i> Run CLT Simulation
+                            </button>
+                            <!-- Histogram Visualisation Canvas -->
+                            <div class="canvas-container">
+                                <canvas id="clt-canvas" width="400" height="150"></canvas>
+                            </div>
+                            <p class="canvas-caption">Frequency distribution histogram of 500 sample means.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Script Loading -->
+    <script src="app.js"></script>
+</body>
+</html>

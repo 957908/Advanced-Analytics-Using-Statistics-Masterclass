@@ -1,0 +1,550 @@
+/* 🎨 Advanced Statistics Masterclass: Global Stylesheet */
+
+/* CSS Variables for Themes */
+:root {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #161e2e;
+    --border-color: #2d3748;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --code-bg: #090d16;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --glass-bg: rgba(22, 30, 46, 0.7);
+    --glass-blur: blur(12px);
+}
+
+.light-mode {
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent-color: #0284c7;
+    --accent-hover: #0369a1;
+    --success-color: #059669;
+    --error-color: #dc2626;
+    --code-bg: #f9fafb;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-blur: blur(8px);
+}
+
+/* Reset and Core Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* App Wrapper Grid */
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 1. Sidebar Section */
+.sidebar {
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.statistics-logo {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.sidebar-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.sidebar-menu {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.menu-item.active {
+    border-left: 4px solid var(--accent-color);
+}
+
+.badge {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.menu-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.sidebar-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* 2. Main Content Area */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+/* Main Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header-title p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.header-controls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.control-btn {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+}
+
+.control-btn:hover {
+    background-color: var(--border-color);
+}
+
+/* Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.5rem;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Cards Styling */
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.panel-body {
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
+/* Scrollbars */
+.scrollable::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 3px;
+}
+
+/* Tabs */
+.note-tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Notes Text Layout */
+.topic-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.topic-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.topic-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+}
+
+.explanation-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.lang-box {
+    background-color: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.lang-box.mr-box {
+    border-left-color: var(--success-color);
+}
+
+.lang-box.hg-box {
+    border-left-color: #fb923c;
+}
+
+.lang-box h5 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.lang-box p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Q&A Accordion */
+.qa-item {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.qa-question {
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qa-answer {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background-color: var(--bg-secondary);
+    display: none;
+}
+
+/* 3. Right Panel: Simulators Layout */
+.simulator-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.sim-card {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.sim-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Inputs and Forms */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.input-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.input-group input[type="text"], .input-group input[type="number"], .control-item select {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.input-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-row .input-group {
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.action-btn {
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.calculate-btn {
+    background-color: var(--accent-color);
+    color: #0f172a;
+}
+
+.calculate-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.run-btn {
+    background-color: var(--success-color);
+    color: #ffffff;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.run-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* Results Display */
+.calc-results {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.metric-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.t-test-box {
+    margin-top: 0.5rem;
+    background-color: rgba(255,255,255,0.03);
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px dashed var(--border-color);
+}
+
+.decision-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.decision-text.reject {
+    color: var(--success-color);
+}
+
+.decision-text.fail {
+    color: var(--error-color);
+}
+
+/* CLT Simulator Visualizer Details */
+.sim-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.control-item label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.control-item input[type="range"] {
+    accent-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.canvas-container {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    height: 160px;
+    width: 100%;
+}
+
+#clt-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.canvas-caption {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 0.35rem;
+}
+
+/* Math blocks styling */
+.sql-code-block {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    margin: 0.75rem 0;
+    overflow-x: auto;
+    color: #f8fafc;
+    cursor: pointer;
+}
+.sql-code-block:hover {
+    border-color: var(--accent-color);
+}
